@@ -1,0 +1,14 @@
+# staticman.yml
+comments:
+  allowedFields: ["name", "message"]
+  requiredFields: ["message"]
+  branch: "main"
+  path: "_data/comments"
+  filename: "entry-:date"
+  format: "yml"
+  moderation: false
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
