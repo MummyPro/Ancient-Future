@@ -130,6 +130,18 @@
     <p>Email your review to: <code>ancientfutureportal@yahoo.com</code></p>
   </section>
 
+  <section class="section testimonials">
+    <h2>Early Reflections</h2>
+    <div class="testimonial">
+      "This book felt like a frequency, not just words." – Soul Reader
+    </div>
+    <div class="testimonial">
+      "Every page whispered something I had forgotten about myself." – Quiet Echo
+    </div>
+    <div class="testimonial">
+      "It’s the only book I’ve ever hugged after finishing." – J.D.
+    </div>
+  </section>
   <!-- 🌿 Your Reflection Section -->
 <section id="reviews" class="section" style="background: linear-gradient(to bottom, #2a1e17, #0f0f0f); padding: 3rem 1rem; border-radius: 8px; box-shadow: 0 0 25px #eac97a55;">
   <h2 style="color: #eac97a; text-align: center; text-shadow: 0 0 8px #eac97a;">Your Reflection</h2>
@@ -165,31 +177,7 @@
   {% endfor %}
 </section>
 
-  <section class="section testimonials">
-    <h2>Early Reflections</h2>
-    <div class="testimonial">
-      "This book felt like a frequency, not just words." – Soul Reader
-    </div>
-    <div class="testimonial">
-      "Every page whispered something I had forgotten about myself." – Quiet Echo
-    </div>
-    <div class="testimonial">
-      "It’s the only book I’ve ever hugged after finishing." – J.D.
-    </div>
-  </section>
-  <!-- ✨ Whispers from Readers Section -->
-<section class="section testimonials">
-  <h2 style="color: #eac97a; text-align: center;">Whispers from Readers</h2>
 
-  {% for comment in site.data.comments reversed %}
-    <div class="testimonial">
-      "{{ comment.message }}"
-      {% if comment.name %}
-        <br />– {{ comment.name }}
-      {% endif %}
-    </div>
-  {% endfor %}
-</section>
 
 
   <footer>
