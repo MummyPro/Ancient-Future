@@ -130,6 +130,41 @@
     <p>Email your review to: <code>ancientfutureportal@yahoo.com</code></p>
   </section>
 
+  <!-- 🌿 Your Reflection Section -->
+<section id="reviews" class="section" style="background: linear-gradient(to bottom, #2a1e17, #0f0f0f); padding: 3rem 1rem; border-radius: 8px; box-shadow: 0 0 25px #eac97a55;">
+  <h2 style="color: #eac97a; text-align: center; text-shadow: 0 0 8px #eac97a;">Your Reflection</h2>
+  <p style="color: #ccc; text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+    If something stirred within you as you read <em>Ancient Future</em>, you are invited to leave a few words below.
+    This space is open for quiet truths, shared from soul to soul. Your message will appear just as you write it —
+    nothing more, nothing less.
+  </p>
+
+  <!-- Form placeholder (non-functional for now) -->
+  <form style="max-width: 600px; margin: 0 auto;">
+    <label for="name" style="color: #e0e0e0;">Name or Initials (optional):</label><br>
+    <input type="text" id="name" placeholder="e.g., E.L.M." style="width: 100%; margin-bottom: 1.2em; padding: 0.7em; background-color: #1a1a1a; border: 1px solid #444; color: #e0e0e0; border-radius: 4px; box-shadow: 0 0 10px #eac97a33;">
+
+    <label for="message" style="color: #e0e0e0;">Your Reflection:</label><br>
+    <textarea id="message" rows="6" placeholder="Whispers from within..." required style="width: 100%; padding: 1em; margin-bottom: 1.5em; background-color: #1a1a1a; border: 1px solid #5b3e20; color: #e0e0e0; border-radius: 6px; box-shadow: 0 0 15px #eac97a88;"></textarea>
+
+    <p style="text-align:center; color:#aaa; font-size:0.9rem;">To share your reflection, please email it to <code>ancientfutureportal@yahoo.com</code> — each reflection is added by hand.</p>
+  </form>
+</section>
+
+<!-- ✨ Whispers from Readers Section -->
+<section class="section testimonials">
+  <h2 style="color: #eac97a; text-align: center;">Whispers from Readers</h2>
+
+  {% for comment in site.data.comments reversed %}
+    <div class="testimonial">
+      "{{ comment.message }}"
+      {% if comment.name %}
+        <br>– {{ comment.name }}
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>
+
   <section class="section testimonials">
     <h2>Early Reflections</h2>
     <div class="testimonial">
@@ -142,6 +177,20 @@
       "It’s the only book I’ve ever hugged after finishing." – J.D.
     </div>
   </section>
+  <!-- ✨ Whispers from Readers Section -->
+<section class="section testimonials">
+  <h2 style="color: #eac97a; text-align: center;">Whispers from Readers</h2>
+
+  {% for comment in site.data.comments reversed %}
+    <div class="testimonial">
+      "{{ comment.message }}"
+      {% if comment.name %}
+        <br />– {{ comment.name }}
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>
+
 
   <footer>
     &copy; 2025 Ancient Future. Designed with presence and purpose.
