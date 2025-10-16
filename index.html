@@ -93,10 +93,48 @@
     <h1>Ancient Future</h1>
     <p>Here. You forgot this. Let me give it back to you in the form of a story.
 </p>
-    <div class="cta">
-      <a href="#order">Order the Book</a>
-    </div>
+  
   </header>
+
+<!-- 🌕 ORDERING PORTAL WITH PAYPAL BUTTON -->
+<section class="section" id="preorder" style="background: linear-gradient(to bottom, #2a1e17, #0f0f0f); padding: 3rem 1rem; border-radius: 8px;">
+  <h2 style="text-align: center; color: #eac97a; font-size: 2.5rem; text-shadow: 0 0 12px #eac97a99;">
+    Ordering Portal
+  </h2>
+
+  <p style="text-align: center; color: #ccc; max-width: 600px; margin: 0 auto 2rem; font-style: italic;">
+    You’re about to receive one of the first <strong>111 sacred copies</strong> of <em>Ancient Future</em>. 
+    Shipping included (UK only). International coming soon.
+  </p>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="text-align: center;">
+    <!-- PayPal Config -->
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="your-paypal@example.com">
+    <input type="hidden" name="item_name" value="Ancient Future – Sacred Copy">
+    <input type="hidden" name="amount" value="11.11">
+    <input type="hidden" name="currency_code" value="GBP">
+    <input type="hidden" name="quantity" value="1">
+    <input type="hidden" name="on0" value="Copy Number">
+    <input type="hidden" name="os0" value="1 of 111">
+    <input type="hidden" name="return" value="https://yourdomain.com/thank-you.html">
+
+    <!-- Glowing Button -->
+    <button type="submit" style="
+      background-color: #5b3e20;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 0 15px #eac97a99, 0 0 30px #eac97a33 inset;
+      cursor: pointer;
+      transition: all 0.3s ease;">
+      Order Sacred Copy – £11.11
+    </button>
+  </form>
+</section>
+
 
   <img src="book cover.png" alt="Ancient Future Book Cover" class="book-cover">
 
