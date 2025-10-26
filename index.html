@@ -200,25 +200,78 @@
     This is a space for quiet truths — shared from soul to soul. Your message will arrive gently, and may be added to the reader wall in time.
   </p>
 
+ <!-- 🌌 FIELD OF ECHOES SUBMISSION FORM -->
+<section id="field-of-echoes" style="background: radial-gradient(circle, #1d1d1d, #0a0a0a); padding: 3rem 1rem; border-radius: 12px; color: #e0d6c3;">
+  <h2 style="text-align: center; font-size: 2.5rem; text-shadow: 0 0 12px #eac97a99;">Field of Echoes</h2>
+  <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; font-style: italic;">
+    Let this be your field of echoes. Share your remembering.
+  </p>
+
   <form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-    <!-- Anti-bot field -->
-    <input type="text" name="_honey" style="display:none">
-    <!-- No captcha -->
-    <input type="hidden" name="_captcha" value="false">
-    <!-- Redirect after submission -->
-    <input type="hidden" name="_next" value="https://ancientfuture.me/thank-you.html">
+    <!-- Optional Signature -->
+    <label for="name" style="display: block; margin-bottom: 0.5rem;">Your Name or Signature (optional)</label>
+    <input type="text" id="name" name="name" placeholder="An echo from..." style="
+      width: 100%;
+      padding: 0.8em;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fdfdfd;
+      box-shadow: 0 0 8px #eac97a88;
+    ">
 
-    <label for="name" style="color: #e0e0e0;">Name or Initials (optional):</label><br>
-    <input type="text" name="name" id="name" placeholder="e.g., E.L.M." style="width: 100%; margin-bottom: 1.2em; padding: 0.7em; background-color: #1a1a1a; border: 1px solid #444; color: #e0e0e0; border-radius: 4px; box-shadow: 0 0 10px #eac97a33;">
+    <!-- The Echo -->
+    <label for="message" style="display: block; margin-bottom: 0.5rem;">Your Echo</label>
+    <textarea id="message" name="message" rows="6" placeholder="Your message from the memory..." required style="
+      width: 100%;
+      padding: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fdfdfd;
+      resize: vertical;
+      box-shadow: 0 0 8px #eac97a88;
+    "></textarea>
 
-    <label for="message" style="color: #e0e0e0;">Your Reflection:</label><br>
-    <textarea name="message" id="message" rows="6" placeholder="Whispers from within..." required style="width: 100%; padding: 1em; margin-bottom: 1.5em; background-color: #1a1a1a; border: 1px solid #5b3e20; color: #e0e0e0; border-radius: 6px; box-shadow: 0 0 15px #eac97a88;"></textarea>
+    <!-- Redirect to the field-of-echoes page -->
+    <input type="hidden" name="_redirect" value="https://ancientfuture.me/field-of-echoes.html">
 
-    <button type="submit" style="background-color: #5b3e20; color: #fff; padding: 0.8em 1.5em; border: none; font-size: 1rem; border-radius: 4px; box-shadow: 0 0 12px #eac97a99; cursor: pointer;">
-      Submit
+    <!-- Email Notification -->
+    <input type="hidden" name="_autoresponse" value="Thank you for your echo. It has been received.">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- Feather + Hush Animation -->
+    <button type="submit" style="
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1em;
+      background-color: #5b3e20;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #eac97a99;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    " onclick="playHush()">
+      <span style="position: relative; z-index: 1;">Send Your Echo ✍️</span>
     </button>
   </form>
+
+  <!-- Hush Sound -->
+  <audio id="hush-sound" src="https://cdn.pixabay.com/audio/2023/03/06/audio_b7bc8b79e3.mp3"></audio>
 </section>
+
+<script>
+  function playHush() {
+    const audio = document.getElementById('hush-sound');
+    if (audio) audio.play();
+  }
+</script>
+
 <footer>
     &copy; 2025 Ancient Future. Designed with presence and purpose.
   </footer>
