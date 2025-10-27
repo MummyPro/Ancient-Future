@@ -1,41 +1,44 @@
-export async function handler(event) {
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ message: "Method Not Allowed" }),
-    };
-  }
+exports.handler = async function(event, context) {
+  const AIRTABLE_TOKEN = process.env.Fielf_of_Echoes; // ← your token variable name
+  const BASE_ID = process.env.Base;                  // ← your base ID
+  const TABLE_ID = process.env.Table;                // ← your table ID or table name
 
   const { name, message } = JSON.parse(event.body);
 
-  const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
-  const BASE_ID = process.env.AIRTABLE_BASE;
-  const TABLE_ID = process.env.AIRTABLE_TABLE;
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`;
 
-  const airtableUrl = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`;
-
-  const response = await fetch(airtableUrl, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      records: [
-        {
-          fields: {
-            "Name or Signature": name || "Anonymous",
-            Echo: message,
-          },
-        },
-      ],
-    }),
-  });
-
-  const data = await response.json();
-
-  return {
-    statusCode: response.status,
-    body: JSON.stringify(data),
+  const recordData = {
+    records: [
+      {
+        fields: {
+          "Name or signature": name || "Anonymous",
+          Reflection: message
+        }
+      }
+    ]
   };
-}
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(recordData)
+    });
+
+    const data = await res.json();
+
+    return {
+      statusCode: res.status,
+      body: JSON.stringify(data)
+    };
+  } catch (error) {
+    console.error('Error sending to Airtable:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Internal Server Error' })
+    };
+  }
+};
