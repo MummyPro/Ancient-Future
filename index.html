@@ -28,20 +28,6 @@
       font-size: 1.2rem;
       color: #ccc;
     }
-    .cta {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .cta a {
-      background-color: #5b3e20;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border: none;
-      font-size: 1.1rem;
-      border-radius: 4px;
-      box-shadow: 0 0 10px #eac97a;
-    }
     .section {
       max-width: 800px;
       margin: 3rem auto;
@@ -74,12 +60,6 @@
       font-style: italic;
       border-bottom: 1px dashed #555;
       padding-bottom: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
     }
     .form-field {
       width: 100%;
@@ -115,6 +95,23 @@
       box-shadow: 0 0 15px #eac97a99, 0 0 30px #eac97a33 inset;
       transition: all 0.3s ease;
     }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .order-button {
+      background-color: #5b3e20;
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 0 15px #eac97a99, 0 0 30px #eac97a33 inset;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
 <body>
@@ -125,10 +122,45 @@
     <p>Here. You forgot this. Let me give it back to you in the form of a story.</p>
   </header>
 
+  <!-- 🌕 ORDERING PORTAL -->
+  <section class="section" id="preorder" style="background: linear-gradient(to bottom, #2a1e17, #0f0f0f); padding: 3rem 1rem; border-radius: 8px;">
+    <h2 style="text-align: center; color: #eac97a; font-size: 2.5rem; text-shadow: 0 0 12px #eac97a99;">
+      Ordering Portal
+    </h2>
+    <p style="text-align: center; color: #ccc; max-width: 600px; margin: 0 auto 2rem; font-style: italic;">
+      You’re about to receive one of the first <strong>111 sacred copies</strong> of <em>Ancient Future</em>.<br>
+      Shipping included.
+    </p>
+
+    <!-- UK Order -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="text-align: center; margin-bottom: 1.5rem;">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="ancientfutureportal@yahoo.com">
+      <input type="hidden" name="item_name" value="Ancient Future – Sacred Copy (UK)">
+      <input type="hidden" name="amount" value="11.11">
+      <input type="hidden" name="currency_code" value="GBP">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="return" value="https://yourdomain.com/thank-you-order.html">
+      <button type="submit" class="order-button">Order Sacred Copy – £11.11 (UK)</button>
+    </form>
+
+    <!-- International Order -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="text-align: center;">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="ancientfutureportal@yahoo.com">
+      <input type="hidden" name="item_name" value="Ancient Future – Sacred Copy (International)">
+      <input type="hidden" name="amount" value="17.17">
+      <input type="hidden" name="currency_code" value="GBP">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="return" value="https://yourdomain.com/thank-you-order.html">
+      <button type="submit" class="order-button">Order Sacred Copy – £17.17 (International)</button>
+    </form>
+  </section>
+
   <!-- Book Cover -->
   <img src="book cover.png" alt="Ancient Future Book Cover" class="book-cover">
 
-  <!-- About Section -->
+  <!-- About -->
   <section class="section">
     <h2>About the Book</h2>
     <p>
@@ -164,10 +196,14 @@
       Want to reach out, ask something, or just share a note? Leave your message below and we’ll be in touch.
     </p>
     <form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="https://ancientfuture.me/thank-you.html">
+
       <input type="text" name="name" placeholder="Your Name (optional)" class="form-field">
       <input type="email" name="email" placeholder="Your Email (optional)" class="form-field">
       <textarea name="message" placeholder="Your message..." class="form-field" rows="6" required></textarea>
-      <button type="submit" class="submit-button">Send Message 📬</button>
+      <button type="submit" class="submit-button">Send Message ✉️</button>
     </form>
   </section>
 
