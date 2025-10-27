@@ -206,8 +206,7 @@
     Send Your Echo
   </h2>
 
-  <form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-    
+  <form id="echoSubmissionForm" style="max-width: 600px; margin: 0 auto;">
     <!-- Optional Signature -->
     <label for="name" style="display: block; margin-bottom: 0.5rem; color: #ddd;">Your Name or Signature (optional)</label>
     <input type="text" id="name" name="name" placeholder="An echo from..." style="
@@ -234,17 +233,7 @@
       box-shadow: 0 0 12px #eac97a99;
     "></textarea>
 
-    <!-- Redirect after submit -->
-    <input type="hidden" name="_redirect" value="https://ancientfuture.me/field-of-echoes.html">
-
-    <!-- Disable CAPTCHA if verified -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- Email autoresponse -->
-    <input type="hidden" name="_autoresponse" value="Thank you for your echo. It has been received with gratitude.">
-    <input type="hidden" name="_template" value="table">
-
-    <!-- Submit Button with Feather + Hush -->
+    <!-- Submit Button -->
     <button type="submit" style="
       margin-top: 2rem;
       width: 100%;
@@ -265,24 +254,50 @@
   </form>
 
   <!-- Hush Sound -->
-  <audio id="hush-sound" src="https://cdn.pixabay.com/audio/2023/03/06/audio_b7bc8b79e3.mp3"></audio>
+<audio id="hush-sound" src="https://files.catbox.moe/4c1uw7.mp3"></audio>
 
   <!-- Feather & Sound Script -->
-  <script>
-    function playHush() {
-      const audio = document.getElementById('hush-sound');
-      if (audio) audio.play();
-    }
-  </script>
-</section>
-
-
+ 
 <script>
+  // Play hush sound (optional)
   function playHush() {
     const audio = document.getElementById('hush-sound');
     if (audio) audio.play();
   }
+
+  // Handle form submission
+  document.getElementById('echoSubmissionForm').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+
+    try {
+      const response = await fetch('/.netlify/functions/submitEcho', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, message })
+      });
+
+      const data = await response.json();
+      console.log("Airtable response:", data);
+
+      if (response.ok) {
+        alert("Your echo has been sent 🌬️");
+        document.getElementById("echoSubmissionForm").reset();
+      } else {
+        alert("Airtable error: " + JSON.stringify(data));
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to connect. Please try later.");
+    }
+  });
 </script>
+
+</section>
 
 <footer>
     &copy; 2025 Ancient Future. Designed with presence and purpose.
