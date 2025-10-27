@@ -1,24 +1,30 @@
 exports.handler = async function(event, context) {
-  const AIRTABLE_TOKEN = process.env.Fielf_of_Echoes; // ← your token variable name
-  const BASE_ID = process.env.Base;                  // ← your base ID
-  const TABLE_ID = process.env.Table;                // ← your table ID or table name
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: 'Method Not Allowed' }),
+    };
+  }
 
-  const { name, message } = JSON.parse(event.body);
-
-  const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`;
-
-  const recordData = {
-    records: [
-      {
-        fields: {
-          "Name or signature": name || "Anonymous",
-          Echo: message
-        }
-      }
-    ]
-  };
+  const AIRTABLE_TOKEN = process.env.Fielf_of_Echoes; // Your token
+  const BASE_ID = process.env.Base;                  // Your base ID
+  const TABLE_ID = process.env.Table;                // Your table ID
 
   try {
+    const { name, message } = JSON.parse(event.body);
+
+    const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`;
+    const recordData = {
+      records: [
+        {
+          fields: {
+            "Name or signature": name || "Anonymous",
+            Echo: message
+          }
+        }
+      ]
+    };
+
     const res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -34,6 +40,7 @@ exports.handler = async function(event, context) {
       statusCode: res.status,
       body: JSON.stringify(data)
     };
+
   } catch (error) {
     console.error('Error sending to Airtable:', error);
     return {
