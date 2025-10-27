@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field of Echoes</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #fdfdfd;
+      font-family: 'Georgia', serif;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #eac97a;
+      font-size: 2.5rem;
+      text-shadow: 0 0 12px #eac97a66;
+      margin-bottom: 2rem;
+    }
+
+    .echo {
+      border: 1px solid #eac97a33;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px #eac97a22;
+      transition: transform 0.3s;
+    }
+
+    .echo:hover {
+      transform: scale(1.01);
+    }
+
+    .signature {
+      color: #eac97a;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+
+    .timestamp {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Field of Echoes</h1>
+  <div id="echoes"></div>
+
+  <script type="module">
+    import { apiKey, baseId, tableId } from './config.js';
+
+    const container = document.getElementById('echoes');
+
+    async function fetchEchoes() {
+      const response = await fetch(
+        `https://api.airtable.com/v0/${baseId}/${tableId}?sort[0][field]=Created&sort[0][direction]=desc`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`
+          }
+        }
+      );
+
+      const data = await response.json();
+
+      data.records.forEach(record => {
+        const message = record.fields.Message;
+        const name = record.fields.Name || "An echo";
+        const created = new Date(record.createdTime).toLocaleString();
+
+        const div = document.createElement('div');
+        div.className = 'echo';
+        div.innerHTML = `
+          <div class="message">${message}</div>
+          <div class="signature">— ${name}</div>
+          <div class="timestamp">${created}</div>
+        `;
+
+        container.appendChild(div);
+      });
+    }
+
+    fetchEchoes();
+  </script>
+</body>
+</html>
