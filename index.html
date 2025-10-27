@@ -189,22 +189,68 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section class="section form-section">
-    <h2>Send Us a Message</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #ccc;">
-      Want to reach out, ask something, or just share a note? Leave your message below and we’ll be in touch.
-    </p>
-    <form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="box">
+ <!-- 💌 Contact Form Section -->
+<section class="section" id="contact" style="background: linear-gradient(to bottom, #1a1411, #0f0f0f); padding: 3rem 1rem; border-radius: 12px; box-shadow: 0 0 25px #eac97a55;">
+  <h2 style="text-align: center; color: #eac97a; font-size: 2.5rem; text-shadow: 0 0 12px #eac97a99;">
+    Send Us a Message
+  </h2>
 
-  <input type="text" name="name" placeholder="Your Name (optional)" class="form-field">
-  <input type="email" name="email" placeholder="Your Email (optional)" class="form-field">
-  <textarea name="message" placeholder="Your message..." class="form-field" rows="6" required></textarea>
+  <p style="color: #ccc; text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+    Whether it’s a reflection, a whisper, or a question — you’re welcome to leave a message below.<br>
+    It will land gently in our inbox.
+  </p>
 
-  <button type="submit" class="submit-button">Send Message ✉️</button>
-</form>
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" style="max-width: 600px; margin: 0 auto;">
+    <!-- Hide CAPTCHA and redirect -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_next" value="https://ancientfuture.me/thank-you.html">
+
+    <!-- Name -->
+    <label for="name" style="display: block; margin-bottom: 0.5rem; color: #ddd;">Your Name (optional)</label>
+    <input type="text" id="name" name="name" placeholder="An echo from..." style="
+      width: 100%;
+      padding: 0.8em;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fdfdfd;
+      box-shadow: 0 0 12px #eac97a99;
+    ">
+
+    <!-- Message -->
+    <label for="message" style="display: block; margin-bottom: 0.5rem; color: #ddd;">Your Message</label>
+    <textarea id="message" name="message" rows="6" required placeholder="Write from the heart..." style="
+      width: 100%;
+      padding: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fdfdfd;
+      resize: vertical;
+      box-shadow: 0 0 12px #eac97a99;
+    "></textarea>
+
+    <!-- Submit -->
+    <button type="submit" style="
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1em;
+      background-color: #5b3e20;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #eac97a99, 0 0 30px #eac97a33 inset;
+      transition: all 0.3s ease;
+    ">
+      Send Message ✉️
+    </button>
+  </form>
+</section>
+
 </section>
 
   <!-- Footer -->
@@ -214,6 +260,7 @@
 
 </body>
 </html>
+
 
 
 
