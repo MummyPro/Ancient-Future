@@ -200,54 +200,24 @@
     It will land gently in our inbox.
   </p>
 
-  <form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-    <!-- Hide CAPTCHA and redirect -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="box">
-    
-    <!-- Name -->
-    <label for="name" style="display: block; margin-bottom: 0.5rem; color: #ddd;">Your Name (optional)</label>
-    <input type="text" id="name" name="name" placeholder="An echo from..." style="
-      width: 100%;
-      padding: 0.8em;
-      margin-bottom: 1.5rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: #fdfdfd;
-      box-shadow: 0 0 12px #eac97a99;
-    ">
+<form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
+  <!-- Disable captcha -->
+  <input type="hidden" name="_captcha" value="false">
 
-    <!-- Message -->
-    <label for="message" style="display: block; margin-bottom: 0.5rem; color: #ddd;">Your Message</label>
-    <textarea id="message" name="message" rows="6" required placeholder="Write from the heart..." style="
-      width: 100%;
-      padding: 1em;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: #fdfdfd;
-      resize: vertical;
-      box-shadow: 0 0 12px #eac97a99;
-    "></textarea>
+  <!-- Optional: use FormSubmit’s default thank-you page -->
+  <!-- (you can remove _next entirely, or leave it blank to use default) -->
 
-    <!-- Submit -->
-    <button type="submit" style="
-      margin-top: 2rem;
-      width: 100%;
-      padding: 1em;
-      background-color: #5b3e20;
-      color: #fff;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #eac97a99, 0 0 30px #eac97a33 inset;
-      transition: all 0.3s ease;
-    ">
-      Send Message ✉️
-    </button>
-  </form>
+  <input type="text" name="name" placeholder="Your Name (optional)" class="form-field" style="width: 100%; padding: 0.75em; margin-bottom: 1rem; border-radius: 6px; border: none;">
+  
+  <input type="email" name="email" placeholder="Your Email (optional)" class="form-field" style="width: 100%; padding: 0.75em; margin-bottom: 1rem; border-radius: 6px; border: none;">
+  
+  <textarea name="message" placeholder="Your message..." class="form-field" rows="6" required style="width: 100%; padding: 0.75em; border-radius: 6px; border: none;"></textarea>
+
+  <button type="submit" class="submit-button" style="margin-top: 1.5rem; padding: 0.75em 2em; background-color: #5b3e20; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    Send Message ✉️
+  </button>
+</form>
+
 </section>
 
   <!-- Footer -->
@@ -257,6 +227,7 @@
 
 </body>
 </html>
+
 
 
 
