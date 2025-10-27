@@ -200,23 +200,50 @@
     It will land gently in our inbox.
   </p>
 
-<form action="https://formsubmit.co/ancientfutureportal@yahoo.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-  <!-- Disable captcha -->
-  <input type="hidden" name="_captcha" value="false">
+<form action="https://formspree.io/f/mqagedrn" method="POST" style="max-width: 600px; margin: 0 auto;">
+  <!-- Redirect to custom thank-you page -->
+  <input type="hidden" name="_redirect" value="https://MummyPro.github.io/Ancient-Future/thank-you2.html">
 
-  <!-- Optional: use FormSubmit’s default thank-you page -->
-  <!-- (you can remove _next entirely, or leave it blank to use default) -->
+  <!-- Name Field -->
+  <input type="text" name="name" placeholder="Your Name (optional)" required style="
+    width: 100%;
+    padding: 0.75em;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: none;
+  ">
 
-  <input type="text" name="name" placeholder="Your Name (optional)" class="form-field" style="width: 100%; padding: 0.75em; margin-bottom: 1rem; border-radius: 6px; border: none;">
-  
-  <input type="email" name="email" placeholder="Your Email (optional)" class="form-field" style="width: 100%; padding: 0.75em; margin-bottom: 1rem; border-radius: 6px; border: none;">
-  
-  <textarea name="message" placeholder="Your message..." class="form-field" rows="6" required style="width: 100%; padding: 0.75em; border-radius: 6px; border: none;"></textarea>
+  <!-- Email Field -->
+  <input type="email" name="email" placeholder="Your Email (optional)" style="
+    width: 100%;
+    padding: 0.75em;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: none;
+  ">
 
-  <button type="submit" class="submit-button" style="margin-top: 1.5rem; padding: 0.75em 2em; background-color: #5b3e20; color: white; border: none; border-radius: 8px; cursor: pointer;">
+  <!-- Message Field -->
+  <textarea name="message" placeholder="Your message..." rows="6" required style="
+    width: 100%;
+    padding: 0.75em;
+    border-radius: 6px;
+    border: none;
+  "></textarea>
+
+  <!-- Submit Button -->
+  <button type="submit" style="
+    margin-top: 1.5rem;
+    padding: 0.75em 2em;
+    background-color: #5b3e20;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">
     Send Message ✉️
   </button>
 </form>
+
 
 </section>
 
@@ -227,6 +254,7 @@
 
 </body>
 </html>
+
 
 
 
