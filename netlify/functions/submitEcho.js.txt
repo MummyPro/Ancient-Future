@@ -6,7 +6,7 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const AIRTABLE_TOKEN = process.env.Fielf_of_Echoes; // Your token
+  const AIRTABLE_TOKEN = process.env.Field_of_Echoes; // Your token
   const BASE_ID = process.env.Base;                  // Your base ID
   const TABLE_ID = process.env.Table;                // Your table ID
 
