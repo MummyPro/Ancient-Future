@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Other Things I Create</title>
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('/mnt/data/A_digital_space_art_image_depicts_outer_space_with.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #fff;
+    }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+    .filters {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .filters button {
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #ffffff20;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 0 5px #fff;
+    }
+    .filters button:hover {
+      background-color: #ffffff40;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery-item {
+      background-color: #00000080;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      text-align: center;
+      position: relative;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .caption {
+      margin-top: 0.8rem;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #eee;
+      text-shadow: 0 0 6px #fff;
+    }
+    .wishlist {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff3;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+      color: #ff69b4;
+      cursor: pointer;
+      box-shadow: 0 0 8px #fff;
+    }
+    .wishlist.liked {
+      background: #ff69b4;
+      color: #fff;
+    }
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+      padding: 0.6rem 1.2rem;
+      background-color: #ffffff30;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+      text-shadow: 0 0 5px #fff;
+    }
+    .back-button:hover {
+      background-color: #ffffff50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Other Things I Create 🎨</h1>
+  <p>A space to share my artistic creations — cards, drawings, and more!<br>
+     (Available works will be marked after the Christmas market.)</p>
+
+  <div class="filters">
+    <button onclick="filterGallery('all')">Show All</button>
+    <button onclick="filterGallery('card')">Cards</button>
+    <button onclick="filterGallery('painting')">Paintings</button>
+  </div>
+
+  <div class="gallery">
+    <!-- Cards -->
+    <div class="gallery-item" data-category="card">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/robin1.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/robin1.jpeg" alt="Robin in Santa Hat 1">
+      </a>
+      <div class="caption">Robin in Santa Hat #1</div>
+    </div>
+    <div class="gallery-item" data-category="card">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/robin2.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/robin2.jpeg" alt="Robin in Santa Hat 2">
+      </a>
+      <div class="caption">Robin in Santa Hat #2</div>
+    </div>
+
+    <!-- Paintings -->
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame1.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame1.jpeg" alt="Painting 1">
+      </a>
+      <div class="caption">Framed Painting #1</div>
+    </div>
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame2.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame2.jpeg" alt="Painting 2">
+      </a>
+      <div class="caption">Framed Painting #2</div>
+    </div>
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame3.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame3.jpeg" alt="Painting 3">
+      </a>
+      <div class="caption">Framed Painting #3</div>
+    </div>
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame4.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame4.jpeg" alt="Painting 4">
+      </a>
+      <div class="caption">Framed Painting #4</div>
+    </div>
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame5.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame5.jpeg" alt="Painting 5">
+      </a>
+      <div class="caption">Framed Painting #5</div>
+    </div>
+    <div class="gallery-item" data-category="painting">
+      <button class="wishlist" onclick="toggleWishlist(this)">&hearts;</button>
+      <a href="images/frame6.jpeg" class="glightbox" data-gallery="gallery1">
+        <img src="images/frame6.jpeg" alt="Painting 6">
+      </a>
+      <div class="caption">Framed Painting #6</div>
+    </div>
+  </div>
+
+  <a href="/" class="back-button">&larr; Back to Homepage</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleWishlist(button) {
+      button.classList.toggle('liked');
+    }
+  </script>
+</body>
+</html>
