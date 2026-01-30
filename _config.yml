@@ -1,6 +1,10 @@
 title: Ancient Future
 description: Future Memories — Every story is a doorway.
-sass:
-  style: compressed
+theme: "so-simple-theme"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
 include:
   - assets
