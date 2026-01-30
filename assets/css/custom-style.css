@@ -1,6 +1,6 @@
-/* 🟡 Ancient Parchment Background */
+/* Parchment background */
 body {
-  background: url("/assets/images/parchment-background.png") no-repeat center center fixed;
+  background: url('/assets/images/parchment.png') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   font-family: Georgia, serif;
@@ -8,20 +8,19 @@ body {
   line-height: 1.6;
 }
 
-/* Adjust content boxes for readability */
-.post-content, .page-content {
-  background: rgba(255, 255, 255, 0.85);
+/* Make content readable over textured background */
+.site-header,
+.site-footer,
+.wrapper,
+.post-content,
+.page-content {
+  background: rgba(255, 255, 255, 0.88);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 15px #aa8f67aa;
-}
-
-/* Header and links */
-h1, h2, h3 {
-  color: #5a3e1b;
+  box-shadow: 0 0 10px #8882;
 }
 
 a {
   color: #7a4700;
-  text-decoration: underline;
+  font-weight: bold;
 }
