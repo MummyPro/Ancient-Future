@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Story Portals — Ancient Future</title>
+  <title>Future Memories — Story Portals</title>
   <style>
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom, #2a1e17, #0f0f0f);
+      background: #1a1411;
       color: #e0e0e0;
+      padding: 2rem;
       line-height: 1.6;
     }
-    header {
+    h1 {
       text-align: center;
-      padding: 4rem 1rem 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
+      font-size: 2.5rem;
       color: #eac97a;
+      text-shadow: 0 0 10px #eac97a66;
     }
-    header p {
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .section {
-      max-width: 800px;
+    .story-link {
+      display: block;
       margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .story-list {
-      list-style: none;
-      padding: 0;
-    }
-    .story-list li {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      background-color: #1a1a1a;
-      border-left: 4px solid #eac97a;
-      box-shadow: 0 0 10px #eac97a33;
-    }
-    .story-list li a {
-      color: #eac97a;
+      max-width: 600px;
+      padding: 1.5rem;
+      background: #2a1e17;
+      border-left: 5px solid #eac97a;
       text-decoration: none;
-      font-size: 1.2rem;
+      color: #eac97a;
+      font-size: 1.3rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
     }
-    .story-list li a:hover {
-      text-decoration: underline;
+    .story-link:hover {
+      background: #3a2a1f;
+      box-shadow: 0 0 10px #eac97a55;
     }
-    footer {
+    .back {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
+      margin-top: 3rem;
+    }
+    .back a {
+      color: #ccc;
+      text-decoration: underline;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>📖 Story Portals</h1>
-  <p>Each one holds a truth coded in fiction. Let yourself be led.</p>
-</header>
+  <h1>🌀 Future Memories — Story Portals</h1>
 
-<section class="section">
-  <ul class="story-list">
-    {% for post in site.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
+  <a href="kian-story.html" class="story-link">✧ The Puzzle & The Fire: Kian’s Story</a>
+  <!-- Add more story links here -->
 
-<footer>
-  &copy; 2025 Ancient Future. Let the stories find who they’re meant for.
-</footer>
+  <div class="back">
+    <a href="index.html">← Return to Ancient Future Home</a>
+  </div>
 
 </body>
 </html>
