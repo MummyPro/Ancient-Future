@@ -1,29 +1,27 @@
-/* Parchment style */
+/* 🟡 Ancient Parchment Background */
 body {
+  background: url("/assets/images/parchment-background.png") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: Georgia, serif;
   color: #3b2f2f;
-  background: #f2e6c9 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
-  background-size: auto;
+  line-height: 1.6;
 }
 
-/* Header style in So Simple theme */
-.site-title, .site-description {
-  color: #5b3e20;
-}
-
-/* Link color */
-a {
-  color: #8a4b00;
-}
-
-/* Article style */
-.post-content {
-  background: rgba(255,255,255,0.85);
+/* Adjust content boxes for readability */
+.post-content, .page-content {
+  background: rgba(255, 255, 255, 0.85);
   padding: 2rem;
   border-radius: 10px;
+  box-shadow: 0 0 15px #aa8f67aa;
 }
 
-/* Post title color */
+/* Header and links */
 h1, h2, h3 {
-  color: #5b3920;
+  color: #5a3e1b;
+}
+
+a {
+  color: #7a4700;
+  text-decoration: underline;
 }
