@@ -1,1 +1,21 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+  background-image: url('/assets/images/parchment.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: #2e1b09;
+  line-height: 1.7;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
 
