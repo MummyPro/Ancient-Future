@@ -1,23 +1,41 @@
 title: Ancient Future
 description: Future Memories — Every story is a doorway.
-theme: "so-simple-theme"
+baseurl: "" # Leave blank unless site is in a subfolder
+url: "https://yourusername.github.io" # Replace with your GitHub Pages URL
 
+# Do NOT use a prebuilt theme so you can customize styles freely
+# theme: minima  <-- this is commented out or removed
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: /:categories/:year/:month/:day/:title.html
+
+# Includes folder so we can use head-custom.html
+includes_dir: _includes
+
+# Plugins (optional for GitHub Pages)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-include:
-  - assets
-header_pages:
-  - index.md
+# Exclude files/folders from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
 
-include:
-  - _includes
+# Where your posts live
+collections:
+  posts:
+    output: true
 
+# Defaults for pages/posts
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
+      type: "posts"
     values:
-      layout: "default"
-      include: head-custom.html
+      layout: "pos
