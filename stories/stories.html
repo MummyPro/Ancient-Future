@@ -9,8 +9,11 @@
       margin: 0;
       padding: 0;
       font-family: 'Georgia', serif;
-      background: url("/images/parchment.jpg") no-repeat center center fixed;
+      background-image: url('/images/parchment.jpg');
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #fdf3d3;
       text-shadow: 1px 1px 2px #000;
     }
@@ -18,6 +21,11 @@
     .container {
       text-align: center;
       padding: 5rem 1rem;
+      background-color: rgba(0, 0, 0, 0.4); /* adds readability overlay */
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 4rem auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
 
     .icon {
@@ -30,7 +38,7 @@
       font-size: 3.2rem;
       margin-bottom: 1rem;
       color: #fff5cc;
-      text-shadow: 2px 2px 6px #5b3e20;
+      text-shadow: 2px 2px 8px #5b3e20;
     }
 
     .tagline {
@@ -50,13 +58,14 @@
 
     .story-list a {
       font-size: 1.2rem;
-      color: #fff3b5;
+      color: #ffe89a;
       text-decoration: underline;
       transition: color 0.3s ease;
     }
 
     .story-list a:hover {
-      color: #fff9d6;
+      color: #ffffff;
+      text-shadow: 0 0 8px #eac97a;
     }
   </style>
 </head>
@@ -67,7 +76,7 @@
     <p class="tagline">Every story is a doorway — waiting for you to knock.</p>
     <ul class="story-list">
       <li><a href="/stories/kian-story/kian-story.html">Kian — The One Who Wouldn't Shrink</a></li>
-      <!-- Add more stories here -->
+      <!-- Add more stories below as needed -->
     </ul>
   </div>
 </body>
