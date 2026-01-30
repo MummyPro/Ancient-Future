@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Soul Who refuses to Shrink just to Belong"
-date: 2025-01-01
+date: 2026-01-01
 ---
 
 Part I – The Fire That Sees
