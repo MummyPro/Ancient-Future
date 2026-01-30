@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Portals — Ancient Future</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #2a1e17, #0f0f0f);
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      color: #eac97a;
+    }
+    header p {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .story-list {
+      list-style: none;
+      padding: 0;
+    }
+    .story-list li {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      border-left: 4px solid #eac97a;
+      box-shadow: 0 0 10px #eac97a33;
+    }
+    .story-list li a {
+      color: #eac97a;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .story-list li a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📖 Story Portals</h1>
+  <p>Each one holds a truth coded in fiction. Let yourself be led.</p>
+</header>
+
+<section class="section">
+  <ul class="story-list">
+    {% for post in site.posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<footer>
+  &copy; 2025 Ancient Future. Let the stories find who they’re meant for.
+</footer>
+
+</body>
+</html>
