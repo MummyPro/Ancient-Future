@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "The Soul Who refuses to Shrink just to Belong"
 date: 2026-01-01
 ---
