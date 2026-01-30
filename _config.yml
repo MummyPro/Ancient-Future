@@ -8,3 +8,16 @@ plugins:
 
 include:
   - assets
+header_pages:
+  - index.md
+
+include:
+  - _includes
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      include: head-custom.html
