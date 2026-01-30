@@ -1,36 +1,29 @@
-/* custom-style.css */
+/* Parchment style */
 body {
-  font-family: 'Georgia', serif;
-  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
-  background-color: #f2e6c9;
+  font-family: Georgia, serif;
   color: #3b2f2f;
-  line-height: 1.8;
-  padding: 2rem;
+  background: #f2e6c9 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+  background-size: auto;
 }
 
+/* Header style in So Simple theme */
+.site-title, .site-description {
+  color: #5b3e20;
+}
+
+/* Link color */
 a {
   color: #8a4b00;
-  text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3 {
-  color: #5b3e20;
-}
-
-.site-header, .site-footer {
-  background-color: #e0d7b7;
-  border-top: 1px solid #c1b089;
-  border-bottom: 1px solid #c1b089;
-  color: #5b3e20;
-}
-
+/* Article style */
 .post-content {
-  background-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255,255,255,0.85);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(139, 69, 19, 0.2);
+  border-radius: 10px;
+}
+
+/* Post title color */
+h1, h2, h3 {
+  color: #5b3920;
 }
