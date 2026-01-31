@@ -80,6 +80,53 @@
         0 0 10px #eac97a,
         0 0 14px #fff2b3;
     }
+
+    .subscribe-form {
+      margin-top: 4rem;
+      padding: 2rem;
+      border-radius: 12px;
+      background-color: rgba(255, 248, 220, 0.1);
+      box-shadow: 0 0 18px rgba(234, 201, 122, 0.3);
+    }
+
+    .subscribe-form label {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #ffe89a;
+      text-shadow: 0 0 6px #eac97a;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      width: 80%;
+      max-width: 300px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .subscribe-form input[type="submit"] {
+      padding: 0.6rem 1.2rem;
+      background-color: #5b3e20;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #eac97a99, 0 0 20px #eac97a33 inset;
+    }
+
+    .subscribe-form a {
+      color: #cdb480;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .subscribe-form a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -91,6 +138,25 @@
       <li><a href="/stories/kian-story.html">Kian — A Soul That Refuses to Shrink Just to Belong</a></li>
       <!-- Add more stories below as needed -->
     </ul>
+
+    <!-- ✉️ Subscribe Section -->
+    <div class="subscribe-form">
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/MBP"
+        method="post"
+        class="embeddable-buttondown-form"
+      >
+        <label for="bd-email">Receive New Stories by Email</label>
+        <input type="email" name="email" id="bd-email" placeholder="Your email address" required />
+        <br />
+        <input type="submit" value="Subscribe" />
+        <p>
+          <a href="https://buttondown.com/refer/MBP" target="_blank">
+            Powered by Buttondown
+          </a>
+        </p>
+      </form>
+    </div>
   </div>
 </body>
 </html>
