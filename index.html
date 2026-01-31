@@ -115,7 +115,7 @@
     }
       .portal-image-container {
   position: relative;
-  max-width: 850px;
+  max-width: 850px; /* Matches contact form */
   margin: 3rem auto;
   border-radius: 12px;
   overflow: hidden;
@@ -128,7 +128,7 @@
   display: block;
 }
 
-.portal-overlay {
+.portal-subtitle {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -136,13 +136,18 @@
   text-align: center;
   color: #fff3d0;
   text-shadow: 0 0 6px #000, 0 0 12px #eac97a;
+  font-size: 1.2rem;
   padding: 0 1rem;
   width: 100%;
 }
 
-.portal-subtitle {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+.portal-button-wrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
 }
 
 .portal-button {
@@ -239,11 +244,13 @@
     
 <section class="portal-image-container">
   <img src="/images/portal.png" alt="Glowing Portal" class="portal-image">
-  <div class="portal-overlay">
-    <p class="portal-subtitle" style="white-space: nowrap;">
-      These aren’t just stories — they’re codes that remember that future
-    </p>
-    <a href="/stories/stories.html" class="portal-button" style="white-space: nowrap;">
+  
+  <!-- Top-centered subtitle -->
+  <p class="portal-subtitle">These aren’t just stories — they’re codes written in fiction</p>
+
+  <!-- Bottom-centered button -->
+  <div class="portal-button-wrapper">
+    <a href="/stories/stories.html" class="portal-button">
       ✨ The Portal Awaits You — Step Into Ancient Truths & Fiction ✨
     </a>
   </div>
@@ -365,6 +372,7 @@
 
 </body>
 </html>
+
 
 
 
