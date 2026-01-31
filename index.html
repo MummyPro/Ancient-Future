@@ -190,23 +190,16 @@
     }
 
     .hero {
-      background: url('/images/portal-background.png') no-repeat center center;
+      background: url('/images/portal-with-title.png') no-repeat center center;
       background-size: cover;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 4rem 1rem 6rem;
       position: relative;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      color: #fdf6cf;
-      text-shadow: 0 0 12px #eac97a, 0 0 24px #eac97a88;
-      margin-bottom: 1rem;
     }
 
     .hero p.subtitle {
@@ -228,7 +221,7 @@
       box-shadow: 0 0 14px #eac97a55, 0 0 24px #eac97a33;
       text-shadow: 0 0 6px #f0d27a, 0 0 14px #fff7b1;
       transition: all 0.3s ease;
-      animation: pulse-glow 3s infinite ease-in-out;
+      animation: pulse-glow 2.5s infinite ease-in-out;
     }
 
     .portal-link:hover {
@@ -241,16 +234,17 @@
     @keyframes pulse-glow {
       0%, 100% {
         text-shadow: 0 0 6px #f0d27a, 0 0 12px #fff7b1;
+        transform: scale(1);
       }
       50% {
         text-shadow: 0 0 12px #ffe689, 0 0 24px #fff8cc;
+        transform: scale(1.05);
       }
     }
   </style>
 </head>
 <body>
   <section class="hero">
-    <h1>Future Memories — Story Portals</h1>
     <p class="subtitle">These aren’t just stories — they’re codes written in fiction</p>
     <a href="/stories/stories.html" class="portal-link">
       ✨ The Portal Awaits You — Step Into Ancient Truths & Fiction ✨
@@ -258,9 +252,6 @@
   </section>
 </body>
 </html>
-
-
-
 
   <!-- Testimonials -->
   <section class="section testimonials">
@@ -392,6 +383,7 @@
 
 </body>
 </html>
+
 
 
 
