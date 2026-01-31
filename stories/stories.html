@@ -28,6 +28,16 @@
       border: none !important;
     }
 
+    .top-link {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: #4B2E2E;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 6px gold, 0 0 12px gold;
+    }
+
     .icon {
       width: 200px;
       height: auto;
@@ -119,18 +129,13 @@
     }
 
     .subscribe-form a {
-      color: #cdb480;
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
-
-    .subscribe-form a:hover {
-      text-decoration: underline;
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <a href="/index.html" class="top-link">Ancient Future</a>
     <img src="/images/feather.png" alt="Feather icon" class="icon" />
     <h1>Future Memories</h1>
     <p class="tagline">Every story is a doorway — waiting for you to knock.</p>
@@ -146,15 +151,10 @@
         method="post"
         class="embeddable-buttondown-form"
       >
-        <label for="bd-email">Receive New Stories by Email</label>
-        <input type="email" name="email" id="bd-email" placeholder="Your email address" required />
+        <label for="bd-email">Receive New Future Memories </label>
+        <input type="email" name="email" id="bd-email" placeholder="Share Your Email Address" required />
         <br />
         <input type="submit" value="Subscribe" />
-        <p>
-          <a href="https://buttondown.com/refer/MBP" target="_blank">
-            Powered by Buttondown
-          </a>
-        </p>
       </form>
     </div>
   </div>
