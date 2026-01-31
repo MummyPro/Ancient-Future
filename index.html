@@ -174,21 +174,91 @@
     </p>
   </section>
 
-<section class="section" style="background: linear-gradient(to bottom, #1a1411, #0f0f0f); padding: 3rem 1rem; border-radius: 12px; box-shadow: 0 0 25px #eac97a55; margin-top: 3rem; text-align: center;">
-  <h2 style="color: #eac97a; font-size: 2rem; text-shadow: 0 0 8px #eac97a;">
-    Future Memories — Story Portals
-  </h2>
-  <p style="color: #ccc; margin: 1rem 0 2rem;">
-<br>
-    These aren’t just stories — they’re codes written in fiction<br>
-  
-  </p>
-  <p>
-    <a href="/stories/stories.html" style="color: #eac97a; font-weight: bold; text-decoration: underline;">
-      ➤ Enter the Realm of Ancient Truths & Fiction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Memories — Story Portals</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0a07;
+      font-family: 'Georgia', serif;
+      color: #fdf3d3;
+    }
+
+    .hero {
+      background: url('/images/portal-background.png') no-repeat center center;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #fdf6cf;
+      text-shadow: 0 0 12px #eac97a, 0 0 24px #eac97a88;
+      margin-bottom: 1rem;
+    }
+
+    .hero p.subtitle {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #e9d8b9;
+      margin-bottom: 2.5rem;
+      text-shadow: 0 0 6px #a97d3f;
+    }
+
+    .portal-link {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #f9e79f;
+      text-decoration: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      background-color: rgba(255, 248, 220, 0.05);
+      box-shadow: 0 0 14px #eac97a55, 0 0 24px #eac97a33;
+      text-shadow: 0 0 6px #f0d27a, 0 0 14px #fff7b1;
+      transition: all 0.3s ease;
+      animation: pulse-glow 3s infinite ease-in-out;
+    }
+
+    .portal-link:hover {
+      background-color: rgba(255, 248, 220, 0.12);
+      color: #fff9cc;
+      box-shadow: 0 0 16px #f7d774cc, 0 0 30px #f7d77488;
+      transform: scale(1.03);
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow: 0 0 6px #f0d27a, 0 0 12px #fff7b1;
+      }
+      50% {
+        text-shadow: 0 0 12px #ffe689, 0 0 24px #fff8cc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Future Memories — Story Portals</h1>
+    <p class="subtitle">These aren’t just stories — they’re codes written in fiction</p>
+    <a href="/stories/stories.html" class="portal-link">
+      ✨ The Portal Awaits You — Step Into Ancient Truths & Fiction ✨
     </a>
-  </p>
-</section>
+  </section>
+</body>
+</html>
+
 
 
 
@@ -322,6 +392,7 @@
 
 </body>
 </html>
+
 
 
 
