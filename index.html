@@ -113,6 +113,67 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+      .portal-image-container {
+  position: relative;
+  max-width: 700px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(234, 201, 122, 0.3);
+}
+
+.portal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portal-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff3d0;
+  text-shadow: 0 0 6px #000, 0 0 12px #eac97a;
+  padding: 0 1rem;
+}
+
+.portal-subtitle {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.portal-button {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  background-color: rgba(20, 10, 0, 0.6);
+  color: #fff9cc;
+  text-decoration: none;
+  text-shadow: 0 0 6px #f0d27a, 0 0 10px #fff7b1;
+  box-shadow: 0 0 12px #eac97a55, 0 0 20px #eac97a22;
+  transition: all 0.3s ease;
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+.portal-button:hover {
+  background-color: rgba(255, 248, 220, 0.15);
+  transform: scale(1.05);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 6px #f0d27a, 0 0 12px #fff7b1;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 12px #ffe689, 0 0 24px #fff8cc;
+    transform: scale(1.05);
+  }
+}
   </style>
 </head>
 <body>
@@ -174,6 +235,18 @@
       This book is sacred. It was not made for mass production. Only physical copies are available — printed with care, infused with stillness, and sent with reverence.
     </p>
   </section>
+    
+<section class="portal-section">
+  <div class="portal-image-container">
+    <img src="/images/your-image-name.jpg" alt="Glowing Portal" class="portal-image">
+    <div class="portal-overlay">
+      <p class="portal-subtitle">These aren’t just stories — they’re codes written in fiction</p>
+      <a href="/stories/stories.html" class="portal-button">
+        ✨ The Portal Awaits You — Step Into Ancient Truths & Fiction ✨
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- 🌟 Reflection Button Section -->
 <section class="section" id="reflection" style="background: linear-gradient(to bottom, #1a1411, #0f0f0f); padding: 3rem 1rem; border-radius: 12px; text-align: center; box-shadow: 0 0 25px #eac97a55;">
@@ -291,6 +364,7 @@
 
 </body>
 </html>
+
 
 
 
