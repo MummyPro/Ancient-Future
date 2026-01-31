@@ -113,6 +113,61 @@
     .back-link:hover {
       color: #5b3e20;
     }
+    <style>
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.back-link {
+  position: relative;
+  display: inline-block;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: #4B2E2E; /* Dark brown */
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #4B2E2E;
+  border-radius: 6px;
+  background: transparent;
+  text-shadow: 0 0 5px gold, 0 0 10px gold;
+  overflow: hidden;
+  transition: color 0.3s, background 0.3s;
+}
+
+.back-link:hover {
+  background-color: #4B2E2E;
+  color: gold;
+}
+
+/* Spark animation effect */
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 6px;
+  background: linear-gradient(120deg, transparent, gold, transparent);
+  animation: spark 2s linear infinite;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@keyframes spark {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
   </style>
 </head>
 
@@ -191,8 +246,11 @@
       </form>
     </div>
 
-    <a href="/stories/stories.html" class="back-link">← Return to Future Memories</a>
-    <a href="/index.html" class="back-link">← Return to Ancient Future</a>
+   <div class="button-container">
+  <a href="/stories/stories.html" class="back-link">← Return to Future Memories</a>
+  <a href="/index.html" class="back-link">← Return to Ancient Future</a>
+  </div>
+
 
 
   </div>
