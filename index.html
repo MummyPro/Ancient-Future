@@ -236,17 +236,38 @@
     </p>
   </section>
     
-<section class="portal-image-container">
-  <img src="/images/portal.png" alt="Glowing Portal" class="portal-image">
-  <div class="portal-overlay">
-    <p class="portal-subtitle" style="white-space: nowrap;">
+<section class="portal-image-container" style="position: relative; text-align: center;">
+  <img src="/images/portal.png" alt="Glowing Portal" class="portal-image" style="width: 100%; border-radius: 12px;">
+  
+  <div class="portal-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem;">
+    
+    <!-- ✨ Subtitle moved up -->
+    <p class="portal-subtitle" style="color: #fffbe6; font-size: 1.3rem; text-shadow: 0 0 8px #eac97a; margin-top: 1rem; white-space: nowrap;">
       These aren’t just stories — they’re codes written in fiction
     </p>
-    <a href="/stories/stories.html" class="portal-button" style="white-space: nowrap;">
+    
+    <!-- ✨ Button stays near bottom -->
+    <a href="/stories/stories.html" class="portal-button" style="
+      align-self: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #f9e79f;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      background-color: rgba(255, 248, 220, 0.05);
+      box-shadow: 0 0 14px #eac97a55, 0 0 24px #eac97a33;
+      text-shadow: 0 0 6px #f0d27a, 0 0 14px #fff7b1;
+      white-space: nowrap;
+      animation: pulse-glow 2.5s infinite ease-in-out;
+      margin-bottom: 2rem;
+    ">
       ✨ The Portal Awaits You — Step Into Ancient Truths & Fiction ✨
     </a>
+    
   </div>
 </section>
+
 
 
 
@@ -366,6 +387,7 @@
 
 </body>
 </html>
+
 
 
 
