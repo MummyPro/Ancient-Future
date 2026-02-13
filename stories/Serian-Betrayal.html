@@ -4,7 +4,8 @@
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kian — A Soul That Refuses to Shrink</title>
+  <title>Was Going Down Worth the Going Up?</title>
+
   <style>
     body {
       margin: 0;
@@ -16,6 +17,7 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #3e2f1c;
+      overflow-x: hidden;
     }
 
     .container {
@@ -25,6 +27,8 @@
       padding: 3rem;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
@@ -48,6 +52,7 @@
       margin: 2rem auto;
       border: 2px solid #eac97a;
       box-shadow: 0 0 12px #eac97a88;
+      border-radius: 10px;
     }
 
     hr {
@@ -56,75 +61,70 @@
       border-top: 1px solid #d2b47e;
     }
 
-    .subscribe {
-      margin-top: 4rem;
-      text-align: center;
+    /* Fade-in on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
     }
 
-    .subscribe label {
-      font-size: 1.3rem;
-      display: block;
-      margin-bottom: 1rem;
-      color: #5b3e20;
-      text-shadow: 0 0 6px #eac97a;
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .subscribe input[type="email"] {
-      padding: 0.7rem;
-      width: 80%;
-      max-width: 320px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
+    /* Sparkles */
+    .sparkles {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
     }
 
-    .subscribe input[type="submit"] {
-      padding: 0.8rem 1.6rem;
-      font-size: 1.1rem;
-      background-color: #5b3e20;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #eac97a, 0 0 24px #eac97a88;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .sparkle {
+      position: absolute;
+      top: -10vh;
+      width: 3px;
+      height: 3px;
+      background: rgba(234, 201, 122, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(234, 201, 122, 0.6);
+      animation: fall linear infinite;
     }
 
-    .subscribe input[type="submit"]:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 18px #eac97a, 0 0 36px #eac97a;
+    @keyframes fall {
+      from { transform: translateY(-10vh); }
+      to   { transform: translateY(110vh); }
     }
 
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 3rem;
+    /* Burning transition */
+    .burn-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%);
+      z-index: 999;
+      animation: burnAway 1.5s ease forwards;
     }
 
-    .back-link {
-      font-family: 'Arial', sans-serif;
-      font-size: 1rem;
-      color: #4B2E2E;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      background-color: transparent;
-      text-shadow: 0 0 4px gold;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    @keyframes burnAway {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
     }
 
-    .back-link:hover {
-      background-color: #4B2E2E;
-      color: gold;
-    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Betrayal</h1>
-    <div class="story">
+
+<div class="burn-overlay"></div>
+<div class="sparkles" id="sparkles"></div>
+
+<div class="container">
+  <h1 class="reveal">Was Going Down Worth the Going Up?</h1>
+
+  <div class="story">
+    <p class="reveal">
       <p>
 The souls gathered together in the chamber once again.
 Serian stood alone at the edge, light steady but dimmed at the edges. 
@@ -225,6 +225,31 @@ And far below, the world kept turning.
       <img src="/images/Serian/End.png" alt="Kian walking into fog">
 
 </p>
+    <script>
+  // Sparkles generator
+  const container = document.getElementById('sparkles');
+  for (let i = 0; i < 40; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.animationDuration = (6 + Math.random() * 6) + 's';
+    s.style.animationDelay = Math.random() * 6 + 's';
+    container.appendChild(s);
+  }
+
+  // Fade-in on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
     </div>
 
     <div class="subscribe">
