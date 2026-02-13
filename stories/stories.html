@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
 <head>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Future Memories – Story Portals</title>
+
   <style>
     body {
       margin: 0;
@@ -73,24 +74,25 @@
     }
 
     .story-list li {
-      margin: 1.2rem 0;
+      margin: 1.5rem 0;
     }
 
     .story-list a {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      font-weight: 500;
       color: #ffe89a;
       text-decoration: underline;
       transition: color 0.3s ease;
       text-shadow: 
-        0 0 6px #f0d27a,
-        0 0 10px #f8e6a0;
+        0 0 8px #f0d27a,
+        0 0 14px #f8e6a0;
     }
 
     .story-list a:hover {
       color: #ffffff;
       text-shadow:
-        0 0 10px #eac97a,
-        0 0 14px #fff2b3;
+        0 0 12px #eac97a,
+        0 0 18px #fff2b3;
     }
 
     .subscribe-form {
@@ -135,40 +137,44 @@
     }
   </style>
 </head>
+
 <body>
+
   <a href="/index.html" class="top-link">Ancient Future</a>
+
   <div class="container">
     <img src="/images/feather.png" alt="Feather icon" class="icon" />
     <h1>Future Memories</h1>
     <p class="tagline">Every story is a doorway — waiting for you to knock.</p>
-   <ul class="story-list">
-  <li>
-    <a href="/stories/kian-story.html">
-      Memory #1 Kian — A Soul That Refuses to Shrink Just to Belong
-    </a>
-  </li>
 
-  <li>
-    <a href="/stories/betrayal.html">
-      Memory #2 Was Going Down Worth the Going Up?
-    </a>
-  </li>
-</ul>
+    <ul class="story-list">
+      <li>
+        <a href="/stories/kian-story.html">
+          Memory #1 — Kian: A Soul That Refuses to Shrink Just to Belong
+        </a>
+      </li>
 
+      <li>
+        <a href="/stories/betrayal.html">
+          Memory #2 — Was Going Down Worth the Going Up?
+        </a>
+      </li>
+    </ul>
 
-    <!-- ✉️ Subscribe Section -->
     <div class="subscribe-form">
       <form
         action="https://buttondown.com/api/emails/embed-subscribe/MBP"
         method="post"
         class="embeddable-buttondown-form"
       >
-        <label for="bd-email">Receive New Future Memories </label>
+        <label for="bd-email">Receive New Future Memories</label>
         <input type="email" name="email" id="bd-email" placeholder="Share Your email address" required />
         <br />
         <input type="submit" value="Subscribe" />
       </form>
     </div>
+
   </div>
+
 </body>
 </html>
