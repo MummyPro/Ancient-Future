@@ -74,29 +74,28 @@
     }
 
     /* Sparkles */
-    .sparkles {
-      pointer-events: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      overflow: hidden;
-    }
+   .sparkles {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* important */
+  overflow: hidden;
+}
 
-    .sparkle {
-      position: absolute;
-      top: -10vh;
-      width: 3px;
-      height: 3px;
-      background: rgba(234, 201, 122, 0.8);
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(234, 201, 122, 0.6);
-      animation: fall linear infinite;
-    }
-
+.container {
+  position: relative;
+  z-index: 2; /* important */
+}
     @keyframes fall {
       from { transform: translateY(-10vh); }
       to   { transform: translateY(110vh); }
     }
+    .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
 
     /* Burning transition */
     .burn-overlay {
@@ -104,7 +103,7 @@
       inset: 0;
       background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%);
       z-index: 999;
-      animation: burnAway 1.5s ease forwards;
+      animation: burnAway 3.5s ease forwards;
     }
 
     @keyframes burnAway {
