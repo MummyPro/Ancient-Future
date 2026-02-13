@@ -226,46 +226,64 @@ And far below, the world kept turning.
       <img src="/images/Serian/End.png" alt="Kian walking into fog">
 
 </p>
-    <script>
-  // Sparkles generator
-  const container = document.getElementById('sparkles');
-  for (let i = 0; i < 40; i++) {
-    const s = document.createElement('div');
-    s.className = 'sparkle';
-    s.style.left = Math.random() * 100 + 'vw';
-    s.style.animationDuration = (6 + Math.random() * 6) + 's';
-    s.style.animationDelay = Math.random() * 6 + 's';
-    container.appendChild(s);
-  }
-
-  // Fade-in on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  reveals.forEach(el => observer.observe(el));
-</script>
-
-    </div>
+        </div> <!-- End of .story -->
 
     <div class="subscribe">
       <form action="https://buttondown.com/api/emails/embed-subscribe/MBP" method="post">
         <label for="bd-email">✨ Receive more Future Memories ✨</label>
-        <input type="email" name="email" id="bd-email" placeholder="Share Your Email Address" required />
+        <input 
+          type="email" 
+          name="email" 
+          id="bd-email" 
+          placeholder="Share Your Email Address" 
+          required 
+        />
         <br>
         <input type="submit" value="Subscribe">
       </form>
     </div>
 
     <div class="button-container">
-      <a href="/stories/stories.html" class="back-link">← Return to Future Memories</a>
-      <a href="/index.html" class="back-link">← Return to Ancient Future</a>
+      <a href="/stories/stories.html" class="back-link">
+        ← Return to Future Memories
+      </a>
+      <a href="/index.html" class="back-link">
+        ← Return to Ancient Future
+      </a>
     </div>
-  </div>
+
+  </div> <!-- End of .container -->
+
+
+  <!-- Scripts placed cleanly at bottom of body -->
+  <script>
+    // Sparkles generator
+    const sparkleContainer = document.getElementById('sparkles');
+
+    if (sparkleContainer) {
+      for (let i = 0; i < 40; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.animationDuration = (6 + Math.random() * 6) + 's';
+        sparkle.style.animationDelay = Math.random() * 6 + 's';
+        sparkleContainer.appendChild(sparkle);
+      }
+    }
+
+    // Fade-in on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
