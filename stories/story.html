@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Was Going Down Worth the Going Up?</title>
+
+  <style>
+    :root{
+      --ink:#3e2f1c;
+      --ink2:#4e391d;
+      --gold:#eac97a;
+      --paper: rgba(255, 248, 220, 0.85);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-image: url('/images/parchment.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      background-color: var(--paper);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--ink2);
+      text-shadow: 1px 1px 4px #fff0d5;
+    }
+
+    .story p {
+      line-height: 1.8;
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      white-space: pre-wrap;
+    }
+
+    .story img {
+      max-width: 90%;
+      display: block;
+      margin: 2rem auto;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 12px #eac97a88;
+      border-radius: 10px;
+    }
+
+    hr {
+      margin: 3rem 0;
+      border: none;
+      border-top: 1px solid #d2b47e;
+    }
+
+    /* ---------- Fade-in on scroll ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(2px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 900ms ease;
+      will-change: opacity, transform, filter;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* ---------- Sparkles overlay ---------- */
+    .sparkles {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .sparkle {
+      position: absolute;
+      top: -10vh;
+      width: 2px;
+      height: 2px;
+      background: rgba(234, 201, 122, 0.85);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(234, 201, 122, 0.55);
+      animation: fall linear infinite;
+      opacity: 0.85;
+    }
+    @keyframes fall {
+      from { transform: translateY(-10vh) translateX(0); }
+      to   { transform: translateY(110vh) translateX(40px); }
+    }
+
+    /* ---------- Audio toggle button ---------- */
+    .audio-toggle {
+      position: sticky;
+      top: 14px;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 20;
+      margin-bottom: 10px;
+    }
+    .audio-btn {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(234, 201, 122, 0.75);
+      background: rgba(255, 248, 220, 0.75);
+      color: #4B2E2E;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(234, 201, 122, 0.35);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      backdrop-filter: blur(6px);
+    }
+    .audio-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 18px rgba(234, 201, 122, 0.55);
+      background: rgba(255, 248, 220, 0.9);
+    }
+
+    /* ---------- Burning parchment transition (page load) ---------- */
+    .burn-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(25,14,7,0.65) 58%, rgba(15,8,4,0.88) 75%, rgba(0,0,0,0.96) 100%);
+      opacity: 1;
+      animation: burnAway 1400ms ease forwards;
+    }
+    .burn-overlay::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(234,201,122,0.20) 0%, rgba(234,201,122,0.06) 30%, rgba(0,0,0,0) 55%),
+        radial-gradient(circle at 60% 55%, rgba(255,180,70,0.12) 0%, rgba(0,0,0,0) 60%);
+      filter: blur(6px);
+      animation: emberPulse 900ms ease-in-out infinite;
+      opacity: .7;
+    }
+    @keyframes emberPulse{
+      0%,100%{ transform: scale(1); opacity: .55; }
+      50%{ transform: scale(1.06); opacity: .85; }
+    }
+    @keyframes burnAway{
+      0%{ opacity: 1; filter: blur(0); }
+      70%{ opacity: 1; filter: blur(0.5px); }
+      100%{ opacity: 0; filter: blur(2px); }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .sparkle, .burn-overlay, .burn-overlay::before { animation: none !important; }
+      .reveal { opacity: 1; transform: none; filter: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Burning transition overlay -->
+  <div class="burn-overlay" aria-hidden="true"></div>
+
+  <!-- Sparkles -->
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <div class="container">
+    <div class="audio-toggle">
+      <button class="audio-btn" id="audioBtn" type="button">🔈 Play ambience</button>
+    </div>
+
+    <h1 class="reveal">Was Going Down Worth the Going Up?</h1>
+
+    <div class="story">
+      <p class="reveal">
+Serian didn’t answer.
+He turned outward — into the vast, soundless Nothingness.
+This would stay with him forever — not just the fire, not just the pain, but the betrayal, the injustice…
+Wounds that could not be undone.
+He cannot erase them — so now, he needs to learn how to heal.
+      </p>
+
+      <!-- Replace with your actual image path -->
+      <img class="reveal" src="/images/soul-realm.png" alt="Souls in the Nothingness">
+
+      <p class="reveal">
+Yet beside him was Kael — still dimmed, still unravelling the echoes of what had just happened.
+Kael, his true soul-brother.
+The one who had walked beside him through every storm.
+The one who, even in his moment of weakness, carried the same wounds.
+Kael, who would do it all again — even if he doesn’t yet know it.
+Who would go down into any realm and suffer, if it meant helping Serian rise.
+      </p>
+
+      <hr class="reveal">
+
+      <p class="reveal">
+Still turned to the endless silence, Serian’s light pulsed — once, slow and steady.
+
+"It was worth it."
+      </p>
+    </div>
+  </div>
+
+  <!-- Ambient audio (must be user-started to satisfy browser rules) -->
+  <!-- Put your ambience file at /audio/ambience.mp3 (or change the src) -->
+  <audio id="ambience" loop preload="auto">
+    <source src="/audio/ambience.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // ---------- Sparkles generator ----------
+    (function sparkles(){
+      const container = document.getElementById('sparkles');
+      const sparkleCount = 40; // increase for more sparkle density
+
+      for (let i = 0; i < sparkleCount; i++) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+        const left = Math.random() * 100;
+        const dur = 6 + Math.random() * 10;      // seconds
+        const delay = Math.random() * 10;        // seconds
+        const size = 1 + Math.random() * 2.2;    // px
+
+        s.style.left = left + 'vw';
+        s.style.animationDuration = dur + 's';
+        s.style.animationDelay = (-delay) + 's';
+        s.style.width = size + 'px';
+        s.style.height = size + 'px';
+        s.style.opacity = (0.35 + Math.random() * 0.6).toFixed(2);
+
+        container.appendChild(s);
+      }
+    })();
+
+    // ---------- Fade-in on scroll ----------
+    (function revealOnScroll(){
+      const els = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(el => obs.observe(el));
+    })();
+
+    // ---------- Audio toggle ----------
+    (function audioToggle(){
+      const btn = document.getElementById('audioBtn');
+      const audio = document.getElementById('ambience');
+      let playing = false;
+
+      async function play(){
+        try {
+          audio.volume = 0.35; // adjust 0.0 - 1.0
+          await audio.play();
+          playing = true;
+          btn.textContent = '🔇 Pause ambience';
+        } catch (e) {
+          // If autoplay is blocked, user click is required (we already use click)
+          console.warn('Audio play blocked:', e);
+        }
+      }
+
+      function pause(){
+        audio.pause();
+        playing = false;
+        btn.textContent = '🔈 Play ambience';
+      }
+
+      btn.addEventListener('click', () => {
+        if (!playing) play();
+        else pause();
+      });
+    })();
+  </script>
+</body>
+</html>
