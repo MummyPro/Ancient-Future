@@ -6,193 +6,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Betrayal</title>
 
- <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Georgia', serif;
-    background-image: url('/images/parchment.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #3e2f1c;
-    overflow-x: hidden;
-  }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-image: url('/images/parchment.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #3e2f1c;
+    }
 
-  .container {
-    max-width: 800px;
-    margin: 4rem auto;
-    background-color: rgba(255, 248, 220, 0.85);
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 2;
-  }
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      background-color: rgba(255, 248, 220, 0.85);
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-    color: #4e391d;
-    text-shadow: 1px 1px 4px #fff0d5;
-  }
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: #4e391d;
+      text-shadow: 1px 1px 4px #fff0d5;
+    }
 
-  .story p {
-    line-height: 1.8;
-    font-size: 1.15rem;
-    margin-bottom: 1.5rem;
-    white-space: pre-wrap;
-  }
+    .story p {
+      line-height: 1.8;
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      white-space: pre-wrap;
+    }
 
-  .story img {
-    max-width: 90%;
-    display: block;
-    margin: 2rem auto;
-    border: 2px solid #eac97a;
-    box-shadow: 0 0 12px #eac97a88;
-    border-radius: 10px;
-  }
+    .story img {
+      max-width: 90%;
+      display: block;
+      margin: 2rem auto;
+      border: 2px solid #eac97a;
+      box-shadow: 0 0 12px #eac97a88;
+      border-radius: 10px;
+    }
 
-  hr {
-    margin: 3rem 0;
-    border: none;
-    border-top: 1px solid #d2b47e;
-  }
+    hr {
+      margin: 3rem 0;
+      border: none;
+      border-top: 1px solid #d2b47e;
+    }
 
-  /* Fade-in */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
-  }
+    /* Fade-in */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  /* Sparkles */
-  .sparkles {
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
+    /* Sparkles */
+    .sparkles {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
 
-  .sparkle {
-    position: absolute;
-    top: -10vh;
-    width: 3px;
-    height: 3px;
-    background: rgba(234, 201, 122, 0.8);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(234, 201, 122, 0.6);
-    animation: fall linear infinite;
-  }
+    .sparkle {
+      position: absolute;
+      top: -10vh;
+      width: 3px;
+      height: 3px;
+      background: rgba(234, 201, 122, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(234, 201, 122, 0.6);
+      animation: fall linear infinite;
+    }
 
-  @keyframes fall {
-    from { transform: translateY(-10vh); }
-    to { transform: translateY(110vh); }
-  }
+    @keyframes fall {
+      from { transform: translateY(-10vh); }
+      to { transform: translateY(110vh); }
+    }
 
-  /* Subscribe section (THIS WAS MISSING) */
-  .subscribe {
-    margin-top: 4rem;
-    text-align: center;
-  }
+    /* Subscribe */
+    .subscribe {
+      margin-top: 4rem;
+      text-align: center;
+    }
 
-  .subscribe label {
-    font-size: 1.3rem;
-    display: block;
-    margin-bottom: 1rem;
-    color: #5b3e20;
-    text-shadow: 0 0 6px #eac97a;
-  }
+    .subscribe label {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: #5b3e20;
+      text-shadow: 0 0 6px #eac97a;
+    }
 
-  .subscribe input[type="email"] {
-    padding: 0.7rem;
-    width: 80%;
-    max-width: 320px;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-  }
+    .subscribe input[type="email"] {
+      padding: 0.7rem;
+      width: 80%;
+      max-width: 320px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
 
-  .subscribe input[type="submit"] {
-    padding: 0.8rem 1.6rem;
-    font-size: 1.1rem;
-    background-color: #5b3e20;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 0 12px #eac97a, 0 0 24px #eac97a88;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+    .subscribe input[type="submit"] {
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      background-color: #5b3e20;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #eac97a, 0 0 24px #eac97a88;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-  .subscribe input[type="submit"]:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 18px #eac97a, 0 0 36px #eac97a;
-  }
+    .subscribe input[type="submit"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px #eac97a, 0 0 36px #eac97a;
+    }
 
-  /* Button container */
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
-  }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
 
-  /* BACK LINK STYLE (THIS WAS ALSO MISSING) */
-  .back-link {
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: #4B2E2E;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    background-color: transparent;
-    text-shadow: 0 0 4px gold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+    .back-link {
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #4B2E2E;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-shadow: 0 0 4px gold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-  .back-link:hover {
-    background-color: #4B2E2E;
-    color: gold;
-  }
+    .back-link:hover {
+      background-color: #4B2E2E;
+      color: gold;
+    }
 
-  /* Burning transition */
-  .burn-overlay {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%);
-    z-index: 999;
-    animation: burnAway 3.5s ease forwards;
-  }
+    /* Burn effect */
+    .burn-overlay {
+      position: fixed;
+      inset: 0;
 
-  @keyframes burnAway {
-    0% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-  }
-
-</style>
-
-</head>
-
-<body>
-
-<div class="burn-overlay"></div>
-<div class="sparkles" id="sparkles"></div>
-
-<div class="container">
-  <h1 class="reveal">Betrayal</h1>
-
-  <div class="story">
-    <p class="reveal">
       <p>
 The souls gathered together in the chamber once again.
 Serian stood alone at the edge, light steady but dimmed at the edges. 
@@ -293,51 +266,48 @@ Still turned to the endless silence, Serian’s light pulsed — once, slow and 
 And far below, the world kept turning.
       <img src="/images/Serian/End.png" alt="Kian walking into fog">
 
-</p>
-            <div class="subscribe">
-      <form action="https://buttondown.com/api/emails/embed-subscribe/MBP" method="post">
-        <label for="bd-email">✨ Receive more Future Memories ✨</label>
-        <input type="email" name="email" id="bd-email" placeholder="Share Your Email Address" required />
-        <br>
-        <input type="submit" value="Subscribe">
-      </form>
-    </div>
+</p>  </div> <!-- End story -->
 
-    <div class="button-container">
-      <a href="/stories/stories.html" class="back-link">← Return to Future Memories</a>
-      <a href="/index.html" class="back-link">← Return to Ancient Future</a>
-    </div>
+  <div class="subscribe">
+    <form action="https://buttondown.com/api/emails/embed-subscribe/MBP" method="post">
+      <label for="bd-email">✨ Receive more Future Memories ✨</label>
+      <input type="email" name="email" id="bd-email" placeholder="Share Your Email Address" required />
+      <br>
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
 
-  </div> <!-- End container -->
+  <div class="button-container">
+    <a href="/stories/stories.html" class="back-link">← Return to Future Memories</a>
+    <a href="/index.html" class="back-link">← Return to Ancient Future</a>
+  </div>
 
+</div> <!-- End container -->
 
-  <!-- Sparkles Script -->
-  <script>
-    const sparkleContainer = document.getElementById('sparkles');
+<script>
+  // Sparkles
+  const sparkleContainer = document.getElementById('sparkles');
+  for (let i = 0; i < 40; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = Math.random() * 100 + 'vw';
+    sparkle.style.animationDuration = (6 + Math.random() * 6) + 's';
+    sparkle.style.animationDelay = Math.random() * 6 + 's';
+    sparkleContainer.appendChild(sparkle);
+  }
 
-    if (sparkleContainer) {
-      for (let i = 0; i < 40; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = Math.random() * 100 + 'vw';
-        sparkle.style.animationDuration = (6 + Math.random() * 6) + 's';
-        sparkle.style.animationDelay = Math.random() * 6 + 's';
-        sparkleContainer.appendChild(sparkle);
+  // Fade-in
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
-    }
+    });
+  }, { threshold: 0.1 });
 
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => observer.observe(el));
-  </script>
+  revealElements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
